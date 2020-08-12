@@ -68,7 +68,14 @@ function updateChange(){
   </head>
 <body onload="iniciar()">
 <div align="center" style="font:18px arial;">
-<a href="https://www.facebook.com/labiotead/" target="_blank"><img src="logo.png" alt="LabEAD">
+<a href="https://www.facebook.com/labiotead/" target="_blank"><img src="logo.png" alt="LabEAD"></a>
+<br>
+<select id="partida" style="border:solid 1px silver;border-radius:8px;">
+  <option value="Motor6b.htm?path=data/200731_141943.txt">Com dimmer</option>
+  <option value="Motor6b.htm?path=data/200731_142046.txt">Sem dimmer</option>
+</select>
+<input type="button" style="border:solid 1px silver;border-radius:8px;" value=" > " onclick="location.href=partida.value;">
+<br>
 <br>
 <iframe src="https://www.google.com/maps/embed?pb=!4v1597185521525!6m8!1m7!1sCAoSLEFGMVFpcFBId2hIb0JKWFpyZWdDR2RfSE9PNUM5c2lZMk5uQ2dHSW5TaTND!2m2!1d-23.6456229!2d-46.5277706!3f237.3812554681327!4f0.27968067485210213!5f0.7820865974627469" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 <span id="hr1"></span>
