@@ -579,7 +579,7 @@ function int32(str){
 
 <div id="video" style="position:absolute;top:0px;left:0px;width:400px;height:300px;background:silver;z-index:20;">
 <iframe id="ytplayer" type="text/html" width="400" height="300"
-  src="https://www.youtube.com/embed/JtdGSxcTOJs?autoplay=1&mute=1"
+  src="http://www.youtube.com/embed/JtdGSxcTOJs?autoplay=1&mute=1"
   allow='autoplay'
   frameborder="0"/>
   </iframe>
@@ -588,6 +588,17 @@ function int32(str){
 
 <input id="videoclosebtn" type="button" value=" X " onclick="videoTimeout()"
  style="position:absolute;top:0px;left:360px;z-index:21;color:white;width:40px;height:30px;background:black;border:none;">
+
+<input id="databtn" type="button" value=" Visualizar Dados " onclick="verdados()"
+ style="position:absolute;top:500px;left:100px;z-index:21;width:200px;height:50px;color:black;font-weight:bold">
+
+<script>
+function verdados(){
+	sa=location.href;
+	path=sa.substring(sa.indexOf("?path=")+6);
+	location.href = "verdados.htm?path="+path;
+}
+</script>
 
 </body>
 </html>
