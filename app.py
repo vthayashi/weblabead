@@ -17,6 +17,11 @@ def motor6():
     filename = 'Motor6.htm'
     return send_file(filename, mimetype='text/html')
 
+@app.route('/Motor6b.htm')
+def motor6b():
+    filename = 'Motor6b.htm'
+    return send_file(filename, mimetype='text/html')
+
 @app.route("/data/<path:path>")
 def data(path):
     filename = 'data/'+path
