@@ -53,4 +53,8 @@ def list():
 @app.route('/logo.png')
 def logo():
     filename = 'logo.png'
-    return send_file(filename, mime
+    return send_file(filename, mimetype='image/jpeg')
+
+if __name__ == '__main__':
+    #app.run(host="127.0.0.1", port=5000)
+    app.run(host="127.0.0.1", port=80)
