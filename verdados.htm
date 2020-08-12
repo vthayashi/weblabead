@@ -1,0 +1,52 @@
+
+<html>
+  <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta charset="utf-8">
+<script>
+
+function iniciar(){
+	sa=location.href;
+	path=sa.substring(sa.indexOf("?path=")+6);
+	xh.open("GET", path, true);
+	xh.send(null);
+}
+
+var xh = new XMLHttpRequest();
+xh.onreadystatechange = function(){
+  if (xh.readyState == 4){
+    if(xh.status == 200) {
+    var res = JSON.parse(xh.responseText);
+	//tabela.innerHTML = this.responseText;
+	if(typeof res.wa != "undefined"){
+		sa = "<table>";
+		sa += "<tr> <th> velocidade </th> <th> fase </th> <th> corrente </th> </tr>";
+		for (i in res.wa[0]){
+			sa += "<tr>";
+			for (j in res.wa){
+				sa += "<td>";
+				sb = res.wa[j][i].toFixed(2);
+				sa += sb.replace(".",",");
+				sa += "</td>";
+			}
+			sa += "</tr>";
+		}
+		sa += "</table>";
+		tabela.innerHTML = sa;
+	}
+   }
+  }
+}
+
+</script>
+
+<style>
+td{border:solid 1px silver;width:40px;text-align:right}
+</style>
+
+  </head>
+<body onload="iniciar()">
+<div id="tabela">
+</div>
+</body>
+</html>
